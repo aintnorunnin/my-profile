@@ -2,7 +2,7 @@
 
 ## Source Material
 
-The site is based on `AGENTS.md` and `docs/Profile.pdf`. The brief defines the product goal, technical stack, testing expectations, and coding standards. The profile provides concrete career, education, skill, location, and contact details.
+The site is based on `AGENTS.md` and private resume/profile source material kept out of git. The brief defines the product goal, technical stack, testing expectations, and coding standards. The resume provides concrete career, education, skill, location, and contact details.
 
 ## Framework
 
@@ -14,7 +14,7 @@ The visual system uses a dark professional palette, glass-like cards, strong typ
 
 ## Content Structure
 
-Profile data lives in `app/content.ts` so the page and tests share one source of truth. The page includes hero, about, career journey, skills, education, interests, and contact sections.
+Profile data lives in `app/content.ts` so the page and tests share one source of truth. The page includes hero, about, career journey, backend-focused skills, education, interests, contact, and AI Brandon sections.
 
 ## Testing Approach
 
