@@ -6,6 +6,7 @@ import {
   profile,
   profileSnapshot,
 } from "./content";
+import AIBrandonChat from "./components/AIBrandonChat";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <AboutSection />
       <JourneySection />
       <SkillsEducationSection />
+      <AIBrandonChat />
     </main>
   );
 }

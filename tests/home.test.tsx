@@ -47,4 +47,14 @@ describe("Home", () => {
     expect(screen.getByText(/University of Washington/i)).toBeInTheDocument();
     expect(screen.getByText(/KAI Japanese Language School/i)).toBeInTheDocument();
   });
+
+  it("includes the AI Brandon chat section", () => {
+    render(<Home />);
+
+    expect(
+      screen.getByRole("heading", {
+        name: /ask ai brandon about his career/i,
+      }),
+    ).toBeInTheDocument();
+  });
 });

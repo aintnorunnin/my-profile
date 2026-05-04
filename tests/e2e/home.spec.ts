@@ -30,3 +30,30 @@ test("exposes working contact links", async ({ page }) => {
     "https://www.linkedin.com/in/brandon-williams-8206426a",
   );
 });
+
+test("answers an AI Brandon career question", async ({ page }) => {
+  await page.route("**/api/ai-brandon", async (route) => {
+    await route.fulfill({
+      contentType: "application/json",
+      body: JSON.stringify({
+        answer: "Brandon has software engineering experience at VMware and Amazon.",
+      }),
+    });
+  });
+
+  await page.goto("/");
+  await expect(
+    page.getByRole("heading", { name: /Ask AI Brandon about his career/i }),
+  ).toBeVisible();
+  await page
+    .getByLabel("Ask about Brandon's career")
+    .fill("What engineering experience does Brandon have?");
+  await page.getByRole("button", { name: "Ask" }).click();
+
+  await expect(
+    page.getByText("What engineering experience does Brandon have?"),
+  ).toBeVisible();
+  await expect(
+    page.getByText("Brandon has software engineering experience at VMware and Amazon."),
+  ).toBeVisible();
+});
