@@ -5,6 +5,7 @@ import {
   journey,
   profile,
   profileSnapshot,
+  skillGroups,
 } from "@/app/content";
 
 describe("profile content", () => {
@@ -28,8 +29,27 @@ describe("profile content", () => {
     );
   });
 
+  it("separates backend skills from supporting skills", () => {
+    expect(profile.backendSkills).toEqual(
+      expect.arrayContaining(["Go", "Java", "AWS CDK", "Kubernetes"]),
+    );
+    expect(profile.supportingSkills).toEqual(
+      expect.arrayContaining(["JavaScript", "HTML", "CSS", "Japanese"]),
+    );
+    expect(skillGroups).toEqual([
+      {
+        label: "Backend and platform",
+        skills: profile.backendSkills,
+      },
+      {
+        label: "Supporting web and language skills",
+        skills: profile.supportingSkills,
+      },
+    ]);
+  });
+
   it("keeps career journey entries complete", () => {
-    expect(journey).toHaveLength(6);
+    expect(journey).toHaveLength(8);
 
     for (const item of journey) {
       expect(item.company).toBeTruthy();
@@ -43,8 +63,9 @@ describe("profile content", () => {
     expect(education).toEqual(
       expect.arrayContaining([
         "University of Washington, BS in Psychology",
-        "Coding Dojo",
-        "KAI Japanese Language School",
+        "Coding Dojo, 1000+ hours across Python, MEAN, and Java stacks",
+        "Amazon Technical Academy, 15-month software development program with native AWS tools",
+        "KAI Japanese Language School, written and spoken Japanese",
       ]),
     );
   });

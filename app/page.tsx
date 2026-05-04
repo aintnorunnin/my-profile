@@ -5,6 +5,7 @@ import {
   journey,
   profile,
   profileSnapshot,
+  skillGroups,
 } from "./content";
 import AIBrandonChat from "./components/AIBrandonChat";
 
@@ -41,7 +42,7 @@ function Hero() {
       </div>
       <aside className="hero__card" aria-label="Profile snapshot">
         <span className="card__label">Current Focus</span>
-        <p>Full-stack web development with a practical, product-minded approach.</p>
+        <p>{profile.currentFocus}</p>
         <dl>
           {profileSnapshot.map((item) => (
             <div key={item.label}>
@@ -103,12 +104,17 @@ function SkillsEducationSection() {
     <section className="section grid-section" aria-labelledby="skills-title">
       <div className="panel">
         <p className="eyebrow">Toolbox</p>
-        <h2 id="skills-title">Technologies Brandon has worked with.</h2>
-        <ul className="tag-list" aria-label="Technical skills">
-          {profile.skills.map((skill) => (
-            <li key={skill}>{skill}</li>
-          ))}
-        </ul>
+        <h2 id="skills-title">Backend and platform technologies Brandon has used.</h2>
+        {skillGroups.map((group) => (
+          <div className="skill-group" key={group.label}>
+            <h3>{group.label}</h3>
+            <ul className="tag-list" aria-label={group.label}>
+              {group.skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div className="panel panel--muted">
         <p className="eyebrow">Education</p>

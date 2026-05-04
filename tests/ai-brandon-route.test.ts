@@ -88,6 +88,11 @@ describe("AI Brandon API", () => {
     expect(requestBody.model).toBe("openai/gpt-oss-120b:free");
     expect(requestBody.messages[0].content).toContain("Career journey");
     expect(requestBody.messages[0].content).toContain("AI Brandon");
+    expect(requestBody.messages[0].content).toContain("Backend focus");
+    expect(requestBody.messages[0].content).toContain("Frontend context");
+    expect(requestBody.messages[0].content).toContain("Backend and platform skills");
+    expect(requestBody.messages[0].content).toContain("Supporting skills");
+    expect(requestBody.messages[0].content).toContain("AWS CDK");
     expect(requestBody.messages[0].content).toContain("VMware");
     expect(requestBody.messages.at(-1)).toEqual({
       role: "user",

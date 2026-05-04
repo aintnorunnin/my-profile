@@ -5,7 +5,7 @@ test("loads Brandon Williams portfolio home page", async ({ page }) => {
 
   await expect(
     page.getByRole("heading", {
-      name: /Brandon Williams builds clear, reliable software for the web/i,
+      name: /Brandon Williams builds backend services and cloud-native systems/i,
     }),
   ).toBeVisible();
   await expect(page.getByText("Tokyo, Japan").first()).toBeVisible();
@@ -16,6 +16,15 @@ test("loads Brandon Williams portfolio home page", async ({ page }) => {
   ).toBeVisible();
   await expect(page.getByText("VMware", { exact: true })).toBeVisible();
   await expect(page.getByText("Amazon", { exact: true })).toHaveCount(3);
+  await expect(
+    page.getByRole("heading", { name: "Backend and platform", exact: true }),
+  ).toBeVisible();
+  await expect(page.getByText("AWS CDK", { exact: true })).toBeVisible();
+  await expect(
+    page.getByText(
+      "Amazon Technical Academy, 15-month software development program with native AWS tools",
+    ),
+  ).toBeVisible();
 });
 
 test("exposes working contact links", async ({ page }) => {

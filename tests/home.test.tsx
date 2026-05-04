@@ -1,7 +1,7 @@
 import { render, screen, within } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import Home from "@/app/page";
-import { contactLinks, journey, profile } from "@/app/content";
+import { contactLinks, journey, profile, skillGroups } from "@/app/content";
 
 describe("Home", () => {
   it("renders the primary portfolio message", () => {
@@ -42,10 +42,20 @@ describe("Home", () => {
   it("highlights core skills and education", () => {
     render(<Home />);
 
-    expect(screen.getByText("React")).toBeInTheDocument();
-    expect(screen.getByText("Python")).toBeInTheDocument();
-    expect(screen.getByText(/University of Washington/i)).toBeInTheDocument();
-    expect(screen.getByText(/KAI Japanese Language School/i)).toBeInTheDocument();
+    for (const group of skillGroups) {
+      expect(screen.getByRole("heading", { name: group.label })).toBeInTheDocument();
+    }
+    for (const skill of ["Go", "AWS CDK", "Kubernetes", "Python"]) {
+      expect(screen.getByText(skill)).toBeInTheDocument();
+    }
+    expect(
+      screen.getByText("University of Washington, BS in Psychology"),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(
+        "Amazon Technical Academy, 15-month software development program with native AWS tools",
+      ),
+    ).toBeInTheDocument();
   });
 
   it("includes the AI Brandon chat section", () => {

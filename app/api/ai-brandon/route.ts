@@ -1,4 +1,4 @@
-import { education, journey, profile } from "@/app/content";
+import { allSkills, education, journey, profile } from "@/app/content";
 
 const OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions";
 const OPENROUTER_MODEL = "openai/gpt-oss-120b:free";
@@ -125,7 +125,11 @@ Profile:
 - Location: ${profile.location}
 - Languages: ${profile.languages}
 - Summary: ${profile.summary}
-- Skills: ${profile.skills.join(", ")}
+- Backend focus: ${profile.backendFocus}
+- Frontend context: ${profile.frontendContext}
+- Backend and platform skills: ${profile.backendSkills.join(", ")}
+- Supporting skills: ${profile.supportingSkills.join(", ")}
+- All listed skills: ${allSkills.join(", ")}
 - Education: ${education.join("; ")}
 - Interests: ${profile.interests.join(", ")}
 

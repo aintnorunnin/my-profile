@@ -5,18 +5,33 @@ export const profile = {
   languages: "English, Japanese",
   email: "williamsb600@gmail.com",
   linkedin: "https://www.linkedin.com/in/brandon-williams-8206426a",
-  heroTitle: "Brandon Williams builds clear, reliable software for the web.",
+  heroTitle: "Brandon Williams builds backend services and cloud-native systems.",
+  currentFocus: "Backend services, cloud infrastructure, and deployment automation.",
   summary:
-    "Software engineer building thoughtful web applications across front-end and back-end systems, with a background spanning marketplace operations, education, and product engineering.",
+    "Backend-focused software engineer with experience building Golang and Java services, AWS deployment pipelines, and cloud-native systems for organizations including VMware and Amazon.",
   intro:
-    "I enjoy turning ideas into reliable web experiences, learning new technologies, and working across the full development process from interface details to backend behavior.",
-  skills: [
-    "JavaScript",
-    "React",
-    "Angular",
-    "Python",
-    "Django",
+    "I enjoy building reliable backend services, deployment workflows, and data-informed systems that can support real teams and customers.",
+  backendFocus:
+    "My professional engineering work has centered on backend services, cloud infrastructure, deployment automation, and production systems.",
+  frontendContext:
+    "I learned front-end development during Coding Dojo and used those skills professionally while working as an Amazon Investigation Specialist, but my software engineering focus is backend and platform work.",
+  backendSkills: [
+    "Go",
     "Java",
+    "Python",
+    "AWS CDK",
+    "AWS Lambda",
+    "DynamoDB",
+    "CloudFormation",
+    "EMR",
+    "Kubernetes",
+    "Docker",
+    "Helm",
+    "GitLab",
+    "Boto3",
+  ],
+  supportingSkills: [
+    "JavaScript",
     "Express",
     "HTML",
     "CSS",
@@ -24,6 +39,19 @@ export const profile = {
   ],
   interests: ["Creative writing", "Arts", "Video games", "Reading"],
 };
+
+export const allSkills = [...profile.backendSkills, ...profile.supportingSkills];
+
+export const skillGroups = [
+  {
+    label: "Backend and platform",
+    skills: profile.backendSkills,
+  },
+  {
+    label: "Supporting web and language skills",
+    skills: profile.supportingSkills,
+  },
+];
 
 export const contactLinks = [
   {
@@ -55,7 +83,9 @@ export const profileSnapshot = [
 
 export const aboutParagraphs = [
   profile.intro,
-  "Brandon's path runs through education, operations, internships, and engineering teams at Amazon and VMware. That mix gives him a grounded understanding of how people, systems, and products connect.",
+  profile.backendFocus,
+  profile.frontendContext,
+  "Brandon's path runs through education, investigations, Amazon Technical Academy, and engineering teams at Amazon and VMware. That mix gives him a grounded understanding of how people, systems, and products connect.",
 ];
 
 export const journey = [
@@ -65,7 +95,7 @@ export const journey = [
     dates: "May 2022 - April 2024",
     location: "Seattle, Washington",
     summary:
-      "Built on production engineering experience while contributing to software systems at enterprise scale.",
+      "Worked on a high-performance Golang microservice designed to replace a legacy Java sensor authentication system, using Kubernetes, GitLab, Docker, and Helm for deployment and configuration.",
   },
   {
     company: "Amazon",
@@ -73,7 +103,7 @@ export const journey = [
     dates: "February 2021 - October 2021",
     location: "Greater Seattle Area",
     summary:
-      "Worked as a software engineer after moving from investigations into hands-on product development.",
+      "Helped build, test, and maintain the Java service responsible for tracking Amazon Fresh supply and demand globally, including cloud-native migration work with AWS CDK.",
   },
   {
     company: "Amazon",
@@ -81,7 +111,7 @@ export const journey = [
     dates: "August 2020 - December 2020",
     location: "Seattle, Washington",
     summary:
-      "Applied formal engineering training to real customer and business problems.",
+      "Built an AWS deployment pipeline for a large-scale batch processing system using AWS CDK, Boto3, and native AWS services.",
   },
   {
     company: "Amazon",
@@ -89,7 +119,7 @@ export const journey = [
     dates: "September 2016 - January 2020",
     location: "Seattle, Washington",
     summary:
-      "Developed analytical judgment and operational discipline before transitioning into software engineering.",
+      "Evaluated seller inventory and transaction history for Fulfillment by Amazon using internal tools, pattern recognition, data analysis, and front-end skills developed through Coding Dojo.",
   },
   {
     company: "Technology Access Foundation Academy",
@@ -107,10 +137,27 @@ export const journey = [
     summary:
       "Served communities through education-focused work before moving deeper into technology.",
   },
+  {
+    company: "Seattle Children's Hospital",
+    role: "Intern",
+    dates: "January 2012 - March 2012",
+    location: "Seattle, Washington",
+    summary:
+      "Worked with youth patients in the psychiatric department, developing activities and charting behavior for physician review.",
+  },
+  {
+    company: "University of Washington",
+    role: "Research Assistant",
+    dates: "October 2009 - March 2012",
+    location: "Seattle, Washington",
+    summary:
+      "Conducted standardized testing and surveys, then recorded, organized, and analyzed research data using precise methods.",
+  },
 ];
 
 export const education = [
   "University of Washington, BS in Psychology",
-  "Coding Dojo",
-  "KAI Japanese Language School",
+  "Coding Dojo, 1000+ hours across Python, MEAN, and Java stacks",
+  "Amazon Technical Academy, 15-month software development program with native AWS tools",
+  "KAI Japanese Language School, written and spoken Japanese",
 ];
