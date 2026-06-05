@@ -9,6 +9,8 @@ import {
 } from "./content";
 import AIBrandonChat from "./components/AIBrandonChat";
 
+const isGitHubPages = process.env.GITHUB_ACTIONS === "true";
+
 export default function Home() {
   return (
     <main>
@@ -16,7 +18,7 @@ export default function Home() {
       <AboutSection />
       <JourneySection />
       <SkillsEducationSection />
-      <AIBrandonChat />
+      {isGitHubPages ? null : <AIBrandonChat />}
     </main>
   );
 }
