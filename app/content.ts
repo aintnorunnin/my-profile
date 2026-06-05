@@ -6,7 +6,7 @@ export const profile = {
   email: "williamsb600@gmail.com",
   linkedin: "https://www.linkedin.com/in/brandon-williams-8206426a",
   heroTitle:
-    "Brandon Williams builds reliable backend services and full-stack web applications.",
+    "Brandon Williams: Software Engineer.",
   currentFocus:
     "Backend services, cloud infrastructure, deployment automation, and small-scale full-stack applications.",
   summary:
