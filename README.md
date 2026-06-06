@@ -1,6 +1,8 @@
-# Brandon Williams Portfolio
+# Brandon Williams Profile
 
-Professional portfolio website built with Next.js.
+My profile website built with Next.js.
+
+Check it out! [My Profile](https://aintnorunnin.github.io/my-profile/)
 
 ## Project Notes
 
